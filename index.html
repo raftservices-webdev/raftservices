@@ -145,13 +145,13 @@
     }
 
     .team-profiles { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 50px; }
-    .profile-card { background: var(--sand); border-radius: 18px; overflow: hidden; border: 1px solid rgba(75,174,214,0.1); transition: all 0.3s; }
+    .profile-card { background: #fff; border-radius: 18px; overflow: hidden; border: 1px solid rgba(75,174,214,0.1); transition: all 0.3s; }
     .profile-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(75,174,214,0.1); }
     .profile-header { background: linear-gradient(135deg, #0a2233, #0d3347); padding: 32px 30px 24px; display: flex; align-items: center; gap: 20px; }
     .profile-avatar { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--blue-light)); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: #fff; flex-shrink: 0; }
     .profile-header-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
     .profile-header-text p { font-size: 0.78rem; color: var(--blue-light); letter-spacing: 0.1em; text-transform: uppercase; }
-    .profile-body { padding: 26px 30px; background: #fff; }
+    .profile-body { padding: 26px 30px 32px; background: #fff; }
     .profile-body p { font-size: 0.88rem; color: var(--muted); line-height: 1.85; font-weight: 400; margin-bottom: 14px; }
     .profile-body p:last-child { margin-bottom: 0; }
 
@@ -171,19 +171,7 @@
     .services-category-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--text); margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid rgba(75,174,214,0.2); }
     .services-category-title em { font-style: italic; color: var(--blue); }
 
-    /* OD — Deep Teal */
-    .od-section .services-category-title { border-bottom-color: rgba(42,157,143,0.3); }
-    .od-section .services-category-title em { color: #2a9d8f; }
-    .od-section .service-card::after { background: linear-gradient(to right, #2a9d8f, #52c4b8); }
-    .od-section .service-card .service-sub { color: #2a9d8f; }
-    .od-section .service-icon { background: rgba(42,157,143,0.12); }
 
-    /* Workshops — Warm Amber */
-    .ws-section .services-category-title { border-bottom-color: rgba(232,168,56,0.3); }
-    .ws-section .services-category-title em { color: #e8a838; }
-    .ws-section .service-card::after { background: linear-gradient(to right, #e8a838, #f0c060); }
-    .ws-section .service-card .service-sub { color: #e8a838; }
-    .ws-section .service-icon { background: rgba(232,168,56,0.12); }
 
     /* Mobile — hide description, show on tap */
     @media (max-width: 768px) {
@@ -192,14 +180,25 @@
       .service-card.expanded p:not(.service-sub) { display: block; }
     }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 60px; }
-    .service-card { background: var(--white); border-radius: 16px; padding: 32px 28px; position: relative; overflow: hidden; transition: all 0.3s; border: 1px solid rgba(75,174,214,0.1); }
+    /* Base cards — light (PD + Workshops) */
+    .service-card { background: #f0f8fc; border-radius: 16px; padding: 32px 28px; position: relative; overflow: hidden; transition: all 0.3s; border: 1px solid rgba(75,174,214,0.2); }
+    .service-card h3 { color: #0a2233 !important; }
+    .service-card p { color: #3d5260 !important; }
+    .service-card .service-sub { color: var(--blue) !important; }
+    .service-icon { background: rgba(75,174,214,0.12) !important; }
+    /* OD section — dark navy cards */
+    .od-section .service-card { background: linear-gradient(135deg, #0a2233, #0d3347); border: 1px solid rgba(75,174,214,0.15); }
+    .od-section .service-card h3 { color: #ffffff !important; }
+    .od-section .service-card p { color: rgba(255,255,255,0.75) !important; }
+    .od-section .service-card .service-sub { color: var(--blue-light) !important; }
+    .od-section .service-icon { background: rgba(75,174,232,0.15) !important; }
     .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--blue), var(--blue-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
     .service-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(75,174,214,0.1); }
     .service-card:hover::after { transform: scaleX(1); }
     .service-icon { width: 48px; height: 48px; background: var(--blue-pale); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 1.4rem; }
-    .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    .service-card .service-sub { font-size: 0.8rem; color: var(--blue); font-style: italic; margin-bottom: 12px; }
-    .service-card p { font-size: 0.86rem; color: var(--muted); line-height: 1.75; font-weight: 400; }
+    .service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: #0a2233; margin-bottom: 6px; }
+    .service-card .service-sub { font-size: 0.92rem; color: var(--blue); font-style: italic; font-weight: 500; margin-bottom: 12px; }
+    .service-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.85; font-weight: 400; }
 
     .training-intro { font-size: 0.95rem; color: var(--muted); line-height: 1.9; max-width: 820px; margin-bottom: 32px; font-weight: 400; }
     .training-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
@@ -644,18 +643,21 @@
           <h3>Anger Management</h3>
           <p class="service-sub">Turning a powerful emotion into a constructive force.</p>
           <p>Understanding the roots of anger, recognising triggers, and building practical strategies to respond rather than react — for individuals and workplace teams.</p>
+          <a href="#contact" style="display:inline-block; margin-top:14px; font-size:0.78rem; font-weight:600; color:var(--blue); letter-spacing:0.06em; text-decoration:none;">Enquire →</a>
         </div>
         <div class="service-card fade-in">
           <div class="service-icon">🗣️</div>
           <h3>Communication & Soft Skills</h3>
           <p class="service-sub">The skills that make the difference in every interaction.</p>
           <p>From spoken English to professional communication, active listening, and interpersonal effectiveness — practical skills for personal and workplace success.</p>
+          <a href="#contact" style="display:inline-block; margin-top:14px; font-size:0.78rem; font-weight:600; color:var(--blue); letter-spacing:0.06em; text-decoration:none;">Enquire →</a>
         </div>
         <div class="service-card fade-in">
           <div class="service-icon">🌿</div>
           <h3>Life Skills Workshop</h3>
           <p class="service-sub">Based on WHO Guidelines.</p>
           <p>A structured, evidence-based workshop covering the ten core life skills identified by the World Health Organisation — building emotional, social, and cognitive capabilities for everyday life.</p>
+          <a href="#contact" style="display:inline-block; margin-top:14px; font-size:0.78rem; font-weight:600; color:var(--blue); letter-spacing:0.06em; text-decoration:none;">Enquire →</a>
         </div>
         <div class="service-card fade-in">
           <div class="service-icon">✨</div>
@@ -664,6 +666,7 @@
           <p>Every team and individual is different. We design and deliver bespoke workshops tailored to your goals, challenges, and the outcomes that matter most to you.</p>
           <p style="margin-top:12px; font-size:0.82rem; color:var(--blue); font-style:italic;">Some of our tailor made workshops from the past:</p>
           <p style="font-size:0.82rem; color:var(--muted);">AI Overview &nbsp;·&nbsp; First Time Traveller &nbsp;·&nbsp; Work-Life Balance &nbsp;·&nbsp; Time Management</p>
+          <a href="#contact" style="display:inline-block; margin-top:14px; font-size:0.78rem; font-weight:600; color:var(--blue); letter-spacing:0.06em; text-decoration:none;">Enquire →</a>
         </div>
       </div><!-- /ws-section -->
 
