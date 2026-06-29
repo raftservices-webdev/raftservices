@@ -217,7 +217,7 @@
     <div class="details-strip">
       <div class="detail-pill">
         <span class="icon">📅</span>
-        <div class="info"><div class="label">Date</div><div class="value">13th June &nbsp;or&nbsp; 20th June 2025</div></div>
+        <div class="info"><div class="label">Date</div><div class="value">Friday, 11th July 2025</div></div>
       </div>
       <div class="detail-pill">
         <span class="icon">🕑</span>
@@ -322,21 +322,14 @@
         <div id="formSection">
           <form id="regForm" action="https://formspree.io/f/xqeydjya" method="POST">
             <div class="fg-row">
-              <div class="fg">
-            <label>Select Your Date *</label>
-            <select name="preferred_date" required>
-              <option value="">Choose a date...</option>
-              <option value="Friday, 13th June 2025">Friday, 13th June 2025</option>
-              <option value="Friday, 20th June 2025">Friday, 20th June 2025</option>
-            </select>
-          </div>
+              <input type="hidden" name="preferred_date" value="Friday, 11th July 2025"/>
           <div class="fg"><label>First Name *</label><input type="text" name="first_name" placeholder="Your first name" required/></div>
               <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Your last name"/></div>
             </div>
             <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="your@email.com" required/></div>
             <div class="fg"><label>Phone *</label><input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required/></div>
             <div class="fg"><label>Organisation <span style="opacity:0.5;font-size:0.7rem">(optional)</span></label><input type="text" name="organisation" placeholder="Where do you work?"/></div>
-            <input type="hidden" name="workshop" value="Managing Stress — 13 &amp; 20 June 2025"/>
+            <input type="hidden" name="workshop" value="Managing Stress — 11 July 2025"/>
             <button type="submit" class="submit-btn">Submit Registration</button>
           </form>
         </div>
